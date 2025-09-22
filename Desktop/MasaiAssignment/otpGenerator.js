@@ -10,38 +10,36 @@
 
 // Example:
 
-// const otpSystem = createOTPSystem();  
-// console.log(otpSystem.generateOTP()); // "Your OTP is: 482193"  
-// console.log(otpSystem.getOTP());      // "482193"  
-// console.log(otpSystem.getOTP());      // "OTP expired"  
-// console.log(otpSystem.generateOTP()); // "Your OTP is: 739182"  
-// console.log(otpSystem.getOTP());      // "739182"  
-// console.log(otpSystem.getOTP());      // "OTP expired"  
+// const otpSystem = createOTPSystem();
+// console.log(otpSystem.generateOTP()); // "Your OTP is: 482193"
+// console.log(otpSystem.getOTP());      // "482193"
+// console.log(otpSystem.getOTP());      // "OTP expired"
+// console.log(otpSystem.generateOTP()); // "Your OTP is: 739182"
+// console.log(otpSystem.getOTP());      // "739182"
+// console.log(otpSystem.getOTP());      // "OTP expired"
 
-
-function createOTPSystem(){
+function createOTPSystem() {
   let otp;
-  return{
-    generateOTP(){
-       otp=Math.random().toString().substring(2,8);
-      return `Your OTP is: ${otp}`
+  return {
+    generateOTP() {
+      otp = Math.random().toString().substring(2, 8);
+      //  otp=Math.floor(Math.random()*1000000)
+      return `Your OTP is: ${otp}`;
     },
-    
-    getOTP(){
-      let temp=otp;
-      otp="";
-      if(temp.length>0)
-      return temp;
-    else
-    return "OTP expired";
-    }
-  }
+
+    getOTP() {
+      let temp = otp;
+      otp = "";
+      if (temp.length > 0) return temp;
+      else return "OTP expired";
+    },
+  };
 }
 
-const otpSystem = createOTPSystem(); 
+const otpSystem = createOTPSystem();
 console.log(otpSystem.generateOTP());
 console.log(otpSystem.getOTP());
 console.log(otpSystem.getOTP());
 console.log(otpSystem.generateOTP());
-console.log(otpSystem.getOTP()); 
-console.log(otpSystem.getOTP()); 
+console.log(otpSystem.getOTP());
+console.log(otpSystem.getOTP());
